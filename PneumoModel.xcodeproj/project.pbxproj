@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B562771A1D4F9F260063795E /* libboost_filesystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B56277191D4F9F260063795E /* libboost_filesystem.dylib */; };
+		B562771C1D4F9F2E0063795E /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B562771B1D4F9F2E0063795E /* libboost_system.dylib */; };
+		B562771E1D4F9F360063795E /* libboost_program_options.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B562771D1D4F9F360063795E /* libboost_program_options.dylib */; };
+		B57581CB1D62428600E730B0 /* trial_arm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B57581C91D62428600E730B0 /* trial_arm.cpp */; };
+		B58A1CCE1E5FF10900292330 /* population_statistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B58A1CCD1E5FF10900292330 /* population_statistics.cpp */; };
+		B5B22FC11C8F374300F5EE93 /* age_group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F771C8F374200F5EE93 /* age_group.cpp */; };
+		B5B22FC21C8F374300F5EE93 /* calendar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F791C8F374200F5EE93 /* calendar.cpp */; };
+		B5B22FC31C8F374300F5EE93 /* colonization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F7C1C8F374200F5EE93 /* colonization.cpp */; };
+		B5B22FC41C8F374300F5EE93 /* configuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F7E1C8F374200F5EE93 /* configuration.cpp */; };
+		B5B22FC51C8F374300F5EE93 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F801C8F374200F5EE93 /* event.cpp */; };
+		B5B22FC61C8F374300F5EE93 /* event_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F821C8F374200F5EE93 /* event_queue.cpp */; };
+		B5B22FC71C8F374300F5EE93 /* host.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F841C8F374200F5EE93 /* host.cpp */; };
+		B5B22FC81C8F374300F5EE93 /* incidence_logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F871C8F374200F5EE93 /* incidence_logger.cpp */; };
+		B5B22FC91C8F374300F5EE93 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F891C8F374200F5EE93 /* main.cpp */; };
+		B5B22FCA1C8F374300F5EE93 /* population.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F8A1C8F374200F5EE93 /* population.cpp */; };
+		B5B22FCB1C8F374300F5EE93 /* prevalence_matcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F8C1C8F374200F5EE93 /* prevalence_matcher.cpp */; };
+		B5B22FCC1C8F374300F5EE93 /* random_number_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F8E1C8F374200F5EE93 /* random_number_generator.cpp */; };
+		B5B22FCD1C8F374300F5EE93 /* scribe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F911C8F374200F5EE93 /* scribe.cpp */; };
+		B5B22FCE1C8F374300F5EE93 /* serotype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F931C8F374200F5EE93 /* serotype.cpp */; };
+		B5B22FCF1C8F374300F5EE93 /* simulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F951C8F374200F5EE93 /* simulation.cpp */; };
+		B5B22FD01C8F374300F5EE93 /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F971C8F374200F5EE93 /* tests.cpp */; };
+		B5B22FD11C8F374300F5EE93 /* vaccination_program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F981C8F374200F5EE93 /* vaccination_program.cpp */; };
+		B5B22FD21C8F374300F5EE93 /* vaccine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5B22F9A1C8F374200F5EE93 /* vaccine.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B546AF3F1C8F335A00B253B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B507D9741CB30B5E00BBBD19 /* lifespan_pmf_pyramid_united_states.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lifespan_pmf_pyramid_united_states.json; sourceTree = "<group>"; };
+		B507D9751CB30B5E00BBBD19 /* mixing_children_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mixing_children_only.json; sourceTree = "<group>"; };
+		B507D9761CB30B5E00BBBD19 /* mixing_random.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mixing_random.json; sourceTree = "<group>"; };
+		B507D9771CB30B5E00BBBD19 /* ranks-toy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-toy.json"; sourceTree = "<group>"; };
+		B507D9781CB30B5E00BBBD19 /* serotypes-toy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "serotypes-toy.json"; sourceTree = "<group>"; };
+		B507D9791CB30B5E00BBBD19 /* toy-simulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "toy-simulation.json"; sourceTree = "<group>"; };
+		B507D97A1CB3EF7800BBBD19 /* fit-vaccine-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fit-vaccine-us.json"; sourceTree = "<group>"; };
+		B507D97B1CB4333100BBBD19 /* ranks_kenya_age_mixing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ranks_kenya_age_mixing.json; sourceTree = "<group>"; };
+		B507D97C1CB4333100BBBD19 /* ranks-us-age-mixing-0.0-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-us-age-mixing-0.0-sg.json"; sourceTree = "<group>"; };
+		B507D97D1CB4333100BBBD19 /* ranks-us-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-us-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D97E1CB4333100BBBD19 /* ranks-us-children-only-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-us-children-only-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D97F1CB4333100BBBD19 /* ranks-us-no-age-mixing-0.3-sg-30-halflife.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-us-no-age-mixing-0.3-sg-30-halflife.json"; sourceTree = "<group>"; };
+		B507D9801CB4333100BBBD19 /* ranks-us-no-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ranks-us-no-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D9811CB4333100BBBD19 /* simulate-us-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "simulate-us-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D9821CB4333100BBBD19 /* simulate-us-children-only-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "simulate-us-children-only-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D9831CB4333100BBBD19 /* simulate-us-no-age-mixing-0.3-sg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "simulate-us-no-age-mixing-0.3-sg.json"; sourceTree = "<group>"; };
+		B507D9841CB4335E00BBBD19 /* simulate-us-no-age-mixing-0.3-sg-30-halflife.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "simulate-us-no-age-mixing-0.3-sg-30-halflife.json"; sourceTree = "<group>"; };
+		B52455421CE395C300F7DF48 /* simulate-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "simulate-us.json"; sourceTree = "<group>"; };
+		B546AF411C8F335A00B253B5 /* pneumo-model */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pneumo-model"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54C54EF1E5F3EA8006CF3D0 /* population_statistics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = population_statistics.h; sourceTree = "<group>"; };
+		B5567A181C99F9C300EFA87F /* mixing_dutch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mixing_dutch.json; sourceTree = "<group>"; };
+		B5567A191C99FC4B00EFA87F /* fit-transmission-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fit-transmission-us.json"; sourceTree = "<group>"; };
+		B56277191D4F9F260063795E /* libboost_filesystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_filesystem.dylib; path = ../../../../usr/local/Cellar/boost/1.60.0_2/lib/libboost_filesystem.dylib; sourceTree = "<group>"; };
+		B562771B1D4F9F2E0063795E /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../usr/local/Cellar/boost/1.60.0_2/lib/libboost_system.dylib; sourceTree = "<group>"; };
+		B562771D1D4F9F360063795E /* libboost_program_options.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_program_options.dylib; path = ../../../../usr/local/Cellar/boost/1.60.0_2/lib/libboost_program_options.dylib; sourceTree = "<group>"; };
+		B566412A1CDBD05800716953 /* sigmas_sparc2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sigmas_sparc2.json; sourceTree = "<group>"; };
+		B566412B1CDBD06400716953 /* sigmas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sigmas.json; sourceTree = "<group>"; };
+		B57581C91D62428600E730B0 /* trial_arm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = trial_arm.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		B57581CA1D62428600E730B0 /* trial_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = trial_arm.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		B57581CC1D62621E00E730B0 /* simulate-test.json */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = text.json; path = "simulate-test.json"; sourceTree = "<group>"; tabWidth = 2; };
+		B58A1CCD1E5FF10900292330 /* population_statistics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = population_statistics.cpp; sourceTree = "<group>"; };
+		B5B22F771C8F374200F5EE93 /* age_group.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = age_group.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F781C8F374200F5EE93 /* age_group.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = age_group.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F791C8F374200F5EE93 /* calendar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = calendar.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7A1C8F374200F5EE93 /* calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = calendar.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7B1C8F374200F5EE93 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7C1C8F374200F5EE93 /* colonization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = colonization.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7D1C8F374200F5EE93 /* colonization.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = colonization.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7E1C8F374200F5EE93 /* configuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = configuration.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F7F1C8F374200F5EE93 /* configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = configuration.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F801C8F374200F5EE93 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F811C8F374200F5EE93 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F821C8F374200F5EE93 /* event_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = event_queue.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F831C8F374200F5EE93 /* event_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = event_queue.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F841C8F374200F5EE93 /* host.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = host.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F851C8F374200F5EE93 /* host.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = host.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F861C8F374200F5EE93 /* host_container.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = host_container.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F871C8F374200F5EE93 /* incidence_logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = incidence_logger.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F881C8F374200F5EE93 /* incidence_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = incidence_logger.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F891C8F374200F5EE93 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8A1C8F374200F5EE93 /* population.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = population.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8B1C8F374200F5EE93 /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = population.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8C1C8F374200F5EE93 /* prevalence_matcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = prevalence_matcher.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8D1C8F374200F5EE93 /* prevalence_matcher.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = prevalence_matcher.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8E1C8F374200F5EE93 /* random_number_generator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = random_number_generator.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F8F1C8F374200F5EE93 /* random_number_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = random_number_generator.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F901C8F374200F5EE93 /* scratch.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = scratch.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F911C8F374200F5EE93 /* scribe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = scribe.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F921C8F374200F5EE93 /* scribe.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = scribe.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F931C8F374200F5EE93 /* serotype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = serotype.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F941C8F374200F5EE93 /* serotype.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = serotype.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F951C8F374200F5EE93 /* simulation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = simulation.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F961C8F374200F5EE93 /* simulation.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = simulation.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; wrapsLines = 1; };
+		B5B22F971C8F374200F5EE93 /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F981C8F374200F5EE93 /* vaccination_program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = vaccination_program.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F991C8F374200F5EE93 /* vaccination_program.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = vaccination_program.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F9A1C8F374200F5EE93 /* vaccine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = vaccine.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F9B1C8F374200F5EE93 /* vaccine.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = vaccine.h; sourceTree = "<group>"; tabWidth = 2; };
+		B5B22F9E1C8F374200F5EE93 /* fit-transmission-kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fit-transmission-kenya.json"; sourceTree = "<group>"; };
+		B5B22FAF1C8F374300F5EE93 /* fitted-ranks-kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fitted-ranks-kenya.json"; sourceTree = "<group>"; };
+		B5B22FB41C8F374300F5EE93 /* initial_ranks_kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initial_ranks_kenya.json; sourceTree = "<group>"; };
+		B5B22FB51C8F374300F5EE93 /* initial_ranks_sparc2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initial_ranks_sparc2.json; sourceTree = "<group>"; };
+		B5B22FB61C8F374300F5EE93 /* lifespan_pmf_pyramid_kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lifespan_pmf_pyramid_kenya.json; sourceTree = "<group>"; };
+		B5B22FB71C8F374300F5EE93 /* mixing_kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mixing_kenya.json; sourceTree = "<group>"; };
+		B5B22FB81C8F374300F5EE93 /* observed_counts_kenya_2012.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = observed_counts_kenya_2012.json; sourceTree = "<group>"; };
+		B5B22FB91C8F374300F5EE93 /* observed_counts_kenya_prevaccine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = observed_counts_kenya_prevaccine.json; sourceTree = "<group>"; };
+		B5B22FBA1C8F374300F5EE93 /* observed_counts_sparc2_2001.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = observed_counts_sparc2_2001.json; sourceTree = "<group>"; };
+		B5B22FBB1C8F374300F5EE93 /* observed_counts_sparc2_2009.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = observed_counts_sparc2_2009.json; sourceTree = "<group>"; };
+		B5B22FBC1C8F374300F5EE93 /* mixing_random.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mixing_random.json; sourceTree = "<group>"; };
+		B5B22FBD1C8F374300F5EE93 /* serotypes_kenya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = serotypes_kenya.json; sourceTree = "<group>"; };
+		B5B22FBE1C8F374300F5EE93 /* serotypes_sparc2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = serotypes_sparc2.json; sourceTree = "<group>"; };
+		B5B22FBF1C8F374300F5EE93 /* lifespan_pmf_pyramid_united_states.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lifespan_pmf_pyramid_united_states.json; sourceTree = "<group>"; };
+		B5B22FC01C8F374300F5EE93 /* wcv-configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "wcv-configuration.json"; sourceTree = "<group>"; };
+		B5B8B76F1D67F071008AD2C0 /* simulate-test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "simulate-test.json"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B546AF3E1C8F335A00B253B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B562771E1D4F9F360063795E /* libboost_program_options.dylib in Frameworks */,
+				B562771A1D4F9F260063795E /* libboost_filesystem.dylib in Frameworks */,
+				B562771C1D4F9F2E0063795E /* libboost_system.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B507D9731CB30B5E00BBBD19 /* toy */ = {
+			isa = PBXGroup;
+			children = (
+				B507D9741CB30B5E00BBBD19 /* lifespan_pmf_pyramid_united_states.json */,
+				B507D9751CB30B5E00BBBD19 /* mixing_children_only.json */,
+				B507D9761CB30B5E00BBBD19 /* mixing_random.json */,
+				B566412B1CDBD06400716953 /* sigmas.json */,
+				B507D9771CB30B5E00BBBD19 /* ranks-toy.json */,
+				B507D9781CB30B5E00BBBD19 /* serotypes-toy.json */,
+				B507D9791CB30B5E00BBBD19 /* toy-simulation.json */,
+			);
+			path = toy;
+			sourceTree = "<group>";
+		};
+		B546AF381C8F335900B253B5 = {
+			isa = PBXGroup;
+			children = (
+				B562771D1D4F9F360063795E /* libboost_program_options.dylib */,
+				B562771B1D4F9F2E0063795E /* libboost_system.dylib */,
+				B56277191D4F9F260063795E /* libboost_filesystem.dylib */,
+				B5B22F9C1C8F374200F5EE93 /* configuration */,
+				B5B22F761C8F374200F5EE93 /* source */,
+				B546AF421C8F335A00B253B5 /* products */,
+			);
+			sourceTree = "<group>";
+		};
+		B546AF421C8F335A00B253B5 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				B546AF411C8F335A00B253B5 /* pneumo-model */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		B5B22F761C8F374200F5EE93 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				B5B22F771C8F374200F5EE93 /* age_group.cpp */,
+				B5B22F781C8F374200F5EE93 /* age_group.h */,
+				B5B22F791C8F374200F5EE93 /* calendar.cpp */,
+				B5B22F7A1C8F374200F5EE93 /* calendar.h */,
+				B5B22F7B1C8F374200F5EE93 /* catch.hpp */,
+				B5B22F7C1C8F374200F5EE93 /* colonization.cpp */,
+				B5B22F7D1C8F374200F5EE93 /* colonization.h */,
+				B5B22F7E1C8F374200F5EE93 /* configuration.cpp */,
+				B5B22F7F1C8F374200F5EE93 /* configuration.h */,
+				B5B22F801C8F374200F5EE93 /* event.cpp */,
+				B5B22F811C8F374200F5EE93 /* event.h */,
+				B5B22F821C8F374200F5EE93 /* event_queue.cpp */,
+				B5B22F831C8F374200F5EE93 /* event_queue.h */,
+				B5B22F841C8F374200F5EE93 /* host.cpp */,
+				B5B22F851C8F374200F5EE93 /* host.h */,
+				B5B22F861C8F374200F5EE93 /* host_container.h */,
+				B5B22F871C8F374200F5EE93 /* incidence_logger.cpp */,
+				B5B22F881C8F374200F5EE93 /* incidence_logger.h */,
+				B5B22F891C8F374200F5EE93 /* main.cpp */,
+				B5B22F8A1C8F374200F5EE93 /* population.cpp */,
+				B5B22F8B1C8F374200F5EE93 /* population.h */,
+				B5B22F8C1C8F374200F5EE93 /* prevalence_matcher.cpp */,
+				B5B22F8D1C8F374200F5EE93 /* prevalence_matcher.h */,
+				B5B22F8E1C8F374200F5EE93 /* random_number_generator.cpp */,
+				B5B22F8F1C8F374200F5EE93 /* random_number_generator.h */,
+				B5B22F901C8F374200F5EE93 /* scratch.h */,
+				B5B22F911C8F374200F5EE93 /* scribe.cpp */,
+				B5B22F921C8F374200F5EE93 /* scribe.h */,
+				B5B22F931C8F374200F5EE93 /* serotype.cpp */,
+				B5B22F941C8F374200F5EE93 /* serotype.h */,
+				B5B22F951C8F374200F5EE93 /* simulation.cpp */,
+				B5B22F961C8F374200F5EE93 /* simulation.h */,
+				B5B22F971C8F374200F5EE93 /* tests.cpp */,
+				B5B22F981C8F374200F5EE93 /* vaccination_program.cpp */,
+				B5B22F991C8F374200F5EE93 /* vaccination_program.h */,
+				B5B22F9A1C8F374200F5EE93 /* vaccine.cpp */,
+				B5B22F9B1C8F374200F5EE93 /* vaccine.h */,
+				B57581C91D62428600E730B0 /* trial_arm.cpp */,
+				B57581CA1D62428600E730B0 /* trial_arm.h */,
+				B54C54EF1E5F3EA8006CF3D0 /* population_statistics.h */,
+				B58A1CCD1E5FF10900292330 /* population_statistics.cpp */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		B5B22F9C1C8F374200F5EE93 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B5B8B76F1D67F071008AD2C0 /* simulate-test.json */,
+				B52455421CE395C300F7DF48 /* simulate-us.json */,
+				B566412A1CDBD05800716953 /* sigmas_sparc2.json */,
+				B507D97B1CB4333100BBBD19 /* ranks_kenya_age_mixing.json */,
+				B507D97C1CB4333100BBBD19 /* ranks-us-age-mixing-0.0-sg.json */,
+				B507D97D1CB4333100BBBD19 /* ranks-us-age-mixing-0.3-sg.json */,
+				B507D97E1CB4333100BBBD19 /* ranks-us-children-only-age-mixing-0.3-sg.json */,
+				B507D97F1CB4333100BBBD19 /* ranks-us-no-age-mixing-0.3-sg-30-halflife.json */,
+				B507D9801CB4333100BBBD19 /* ranks-us-no-age-mixing-0.3-sg.json */,
+				B507D9811CB4333100BBBD19 /* simulate-us-age-mixing-0.3-sg.json */,
+				B507D9821CB4333100BBBD19 /* simulate-us-children-only-age-mixing-0.3-sg.json */,
+				B507D9831CB4333100BBBD19 /* simulate-us-no-age-mixing-0.3-sg.json */,
+				B507D9841CB4335E00BBBD19 /* simulate-us-no-age-mixing-0.3-sg-30-halflife.json */,
+				B507D97A1CB3EF7800BBBD19 /* fit-vaccine-us.json */,
+				B507D9731CB30B5E00BBBD19 /* toy */,
+				B5B22F9E1C8F374200F5EE93 /* fit-transmission-kenya.json */,
+				B5567A191C99FC4B00EFA87F /* fit-transmission-us.json */,
+				B5B22FAF1C8F374300F5EE93 /* fitted-ranks-kenya.json */,
+				B5B22FB41C8F374300F5EE93 /* initial_ranks_kenya.json */,
+				B5B22FB51C8F374300F5EE93 /* initial_ranks_sparc2.json */,
+				B5B22FB61C8F374300F5EE93 /* lifespan_pmf_pyramid_kenya.json */,
+				B5B22FBF1C8F374300F5EE93 /* lifespan_pmf_pyramid_united_states.json */,
+				B5B22FB71C8F374300F5EE93 /* mixing_kenya.json */,
+				B5567A181C99F9C300EFA87F /* mixing_dutch.json */,
+				B5B22FBC1C8F374300F5EE93 /* mixing_random.json */,
+				B5B22FB81C8F374300F5EE93 /* observed_counts_kenya_2012.json */,
+				B5B22FB91C8F374300F5EE93 /* observed_counts_kenya_prevaccine.json */,
+				B5B22FBA1C8F374300F5EE93 /* observed_counts_sparc2_2001.json */,
+				B5B22FBB1C8F374300F5EE93 /* observed_counts_sparc2_2009.json */,
+				B5B22FBD1C8F374300F5EE93 /* serotypes_kenya.json */,
+				B5B22FBE1C8F374300F5EE93 /* serotypes_sparc2.json */,
+				B5B22FC01C8F374300F5EE93 /* wcv-configuration.json */,
+				B57581CC1D62621E00E730B0 /* simulate-test.json */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B546AF401C8F335A00B253B5 /* pneumo-model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B546AF481C8F335A00B253B5 /* Build configuration list for PBXNativeTarget "pneumo-model" */;
+			buildPhases = (
+				B546AF3D1C8F335A00B253B5 /* Sources */,
+				B546AF3E1C8F335A00B253B5 /* Frameworks */,
+				B546AF3F1C8F335A00B253B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pneumo-model";
+			productName = PneumoModel;
+			productReference = B546AF411C8F335A00B253B5 /* pneumo-model */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B546AF391C8F335900B253B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Francisco Cai";
+				TargetAttributes = {
+					B546AF401C8F335A00B253B5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = B546AF3C1C8F335900B253B5 /* Build configuration list for PBXProject "PneumoModel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B546AF381C8F335900B253B5;
+			productRefGroup = B546AF421C8F335A00B253B5 /* products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B546AF401C8F335A00B253B5 /* pneumo-model */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B546AF3D1C8F335A00B253B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B22FCA1C8F374300F5EE93 /* population.cpp in Sources */,
+				B5B22FC31C8F374300F5EE93 /* colonization.cpp in Sources */,
+				B5B22FC11C8F374300F5EE93 /* age_group.cpp in Sources */,
+				B5B22FC91C8F374300F5EE93 /* main.cpp in Sources */,
+				B5B22FCD1C8F374300F5EE93 /* scribe.cpp in Sources */,
+				B58A1CCE1E5FF10900292330 /* population_statistics.cpp in Sources */,
+				B5B22FD21C8F374300F5EE93 /* vaccine.cpp in Sources */,
+				B5B22FC41C8F374300F5EE93 /* configuration.cpp in Sources */,
+				B5B22FC71C8F374300F5EE93 /* host.cpp in Sources */,
+				B5B22FC21C8F374300F5EE93 /* calendar.cpp in Sources */,
+				B5B22FCE1C8F374300F5EE93 /* serotype.cpp in Sources */,
+				B5B22FC61C8F374300F5EE93 /* event_queue.cpp in Sources */,
+				B5B22FCB1C8F374300F5EE93 /* prevalence_matcher.cpp in Sources */,
+				B5B22FD11C8F374300F5EE93 /* vaccination_program.cpp in Sources */,
+				B5B22FCF1C8F374300F5EE93 /* simulation.cpp in Sources */,
+				B5B22FC81C8F374300F5EE93 /* incidence_logger.cpp in Sources */,
+				B5B22FD01C8F374300F5EE93 /* tests.cpp in Sources */,
+				B57581CB1D62428600E730B0 /* trial_arm.cpp in Sources */,
+				B5B22FC51C8F374300F5EE93 /* event.cpp in Sources */,
+				B5B22FCC1C8F374300F5EE93 /* random_number_generator.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B546AF461C8F335A00B253B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B546AF471C8F335A00B253B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B546AF491C8F335A00B253B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/boost/1.60.0_2/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B546AF4A1C8F335A00B253B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/boost/1.60.0_2/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B546AF3C1C8F335900B253B5 /* Build configuration list for PBXProject "PneumoModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B546AF461C8F335A00B253B5 /* Debug */,
+				B546AF471C8F335A00B253B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B546AF481C8F335A00B253B5 /* Build configuration list for PBXNativeTarget "pneumo-model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B546AF491C8F335A00B253B5 /* Debug */,
+				B546AF4A1C8F335A00B253B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B546AF391C8F335900B253B5 /* Project object */;
+}

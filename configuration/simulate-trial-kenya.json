@@ -1,0 +1,177 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_kenya.json",
+    "ranks_file": "WCV-PAPER-ranks-kenya.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 150
+  },
+  "host": {
+    "mu": 0.25,
+    "epsilon": 0.1,
+    "sigmas_file": "sigmas_kenya.json",
+    "sigma_sg": 0.0,
+    "halflife_st": -1,
+    "halflife_sg": -1
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.133056,
+    "omega": 1e-6,
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "lifespan_pmf_pyramid_kenya.json",
+    "age_mixing_file": "mixing_kenya.json"
+  },
+  "vaccines": [
+    {
+      "name": "PLACEBO",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.0,
+        "relative": [ 1.0 ]
+      },
+      "duration_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.0,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "SR-0.5",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.5,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "SR-1.0",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 1.0,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "SR-1.0-6A",
+      "susceptibility_reduction": {
+        "serotypes": [ "6A" ],
+        "max": 1.0,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "DR-3ce",
+      "duration_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.5276,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "DR-5ce",
+      "duration_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.7135,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "DR-10ce",
+      "duration_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.9179,
+        "relative": [ 1.0 ]
+      }
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 50000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 50,
+    "vaccinations": [],
+    "trial_arms": [
+      {
+        "name": "control-infant",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "PLACEBO",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "control-toddler",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "PLACEBO",
+        "schedule": [ 360 ]
+      },
+      {
+        "name": "sr-0.5-infant",
+        "num_subjects": 1000,
+        "start_year": 145,
+        "vaccine": "SR-0.5",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "sr-1.0-infant",
+        "num_subjects": 1000,
+        "start_year": 145,
+        "vaccine": "SR-1.0",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "sr-1.0-6A-infant",
+        "num_subjects": 1000,
+        "start_year": 145,
+        "vaccine": "SR-1.0-6A",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "dr-3ce-infant",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-3ce",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "dr-5ce-infant",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-5ce",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "dr-10ce-infant",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-10ce",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "dr-3ce-toddler",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-3ce",
+        "schedule": [ 360 ]
+      },
+      {
+        "name": "dr-5ce-toddler",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-5ce",
+        "schedule": [ 360 ]
+      },
+      {
+        "name": "dr-10ce-toddler",
+        "num_subjects": 5000,
+        "start_year": 145,
+        "vaccine": "DR-10ce",
+        "schedule": [ 360 ]
+      }
+    ]
+  }
+}

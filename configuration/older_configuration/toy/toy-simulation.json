@@ -1,0 +1,68 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes-toy.json",
+    "ranks_file": "ranks-toy.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 600
+  },
+  "host": {
+    "mu": 0.25,
+    "epsilon": 0.25,
+    "sigmas_file": "sigmas.json",
+    "sigma_sg": 0.3,
+    "halflife_st": -1,
+    "halflife_sg": -1
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.05,
+    "omega": 1e-6,
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "lifespan_pmf_pyramid_united_states.json",
+    "age_mixing_file": "mixing_children_only.json"
+  },
+  "vaccines": [
+    {
+      "name": "MADE_UP",
+      "susceptibility_reduction": {
+        "serotypes": [ "1A" ],
+        "max": 1.0,
+        "relative": [ 1.0 ]
+      },
+      "duration_reduction": {
+        "serotypes": [ ],
+        "max": 0.0,
+        "relative": [ ]
+      },
+      "infectiousness_reduction": {
+        "serotypes": [ ],
+        "max": 0.0,
+        "relative": [ ]
+      }
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 20000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 150,
+    "vaccinations": [
+      {
+        "vaccine": "MADE_UP",
+        "start_year": 150,
+        "start_day": 0,
+        "duration": 100,
+        "coverage": [
+          0.9
+        ],
+        "schedule": [ 
+          60 
+        ]
+      }
+    ]
+  }
+}

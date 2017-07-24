@@ -1,0 +1,35 @@
+{
+  "colonization": {
+    "num_serotypes": 3,
+    "kappa": 1, // minimum duration of carriage of a strain of pneumococcus (days)
+    "epsilon": 0.5, // shape parameter for acquired immunity
+    "min_duration": 20,
+    "max_duration": 60,
+    "fitness_ranks": [1, 2, 3]
+  },
+  "host": {
+    "maturity_age": 15,
+    "mu": 0.25, // reduction in susceptibility by exclusion due to fitter strain
+    "sigma": 0.5 // reduction in susceptibiliy due to past colonizations same serotype
+  },
+  "population": {
+    "max_age": 111,
+    "partner_age_diff": 3,
+    "partner_prob": 0.9,
+    "beta": 0.03, // contact rate
+    "omega": 1e-6, // immigration rate
+    "initial_colonization_prob": 0.02,
+    "pmf_files": {
+      "initial_age"    : "initial_age_pmf.json",
+      "lifespan"       : "lifespan_pmf.json",
+      "fledge_age"     : "fledge_age_pmf.json",
+      "partnering_age" : "partnering_age_pmf.json",
+      "childbirth_age" : "childbirth_age_pmf.json",
+      "parity"         : "parity_pmf.json"
+    }
+  },
+  "simulation": {
+    "num_initial_hosts": 1000,
+    "num_years": 100
+  }
+}

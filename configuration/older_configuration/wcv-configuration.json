@@ -1,0 +1,66 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_kenya.json",
+    "ranks_file": "fitted-ranks-kenya.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 300
+  },
+  "host": {
+    "mu": 0.25, 
+    "epsilon": 0.25,
+    "sigma": 0.3,
+    "sigma_sg": 0.0
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.0558192,
+    "omega": 1e-6, 
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "kenya_lifespan_pmf_pyramid.json"
+  },
+  "vaccines": [
+    {
+      "name": "WCV",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.8,
+        "relative": [0.0, 0.0, 1.0]
+      },
+      "infectiousness_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.0,
+        "relative": [0.0, 0.0, 1.0]
+      },
+      "duration_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.0,
+        "relative": [0.0, 0.0, 1.0]
+      }
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 25000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 100,
+    "vaccinations": [
+      {
+        "vaccine": "WCV",
+        "start_year": 150,
+        "start_day": 0,
+        "duration": 50,
+        "coverage": [
+          0.75
+        ],
+        "schedule": [
+          42, 70, 98
+        ]
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,35 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_kenya.json",
+    "ranks_file": "ranks_kenya_age_mixing.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 300
+  },
+  "host": {
+    "mu": 0.25,
+    "epsilon": 0.25,
+    "sigma": 0.3,
+    "sigma_sg": 0.0
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.0165159,
+    "omega": 1e-6,
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "kenya_lifespan_pmf_pyramid.json",
+    "age_mixing_file": "kenya_mixing.json"
+  },
+  "vaccines": [],
+  "simulation": {
+    "num_initial_hosts": 10000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 50,
+    "vaccinations": []
+  }
+}
+

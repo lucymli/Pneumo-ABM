@@ -1,0 +1,71 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_kenya.json",
+    "ranks_file": "fitted-ranks-kenya.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 300
+  },
+  "host": {
+    "mu": 0.25, 
+    "epsilon": 0.25,
+    "sigma": 0.3,
+    "sigma_sg": 0.0
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.0558192,
+    "omega": 1e-6, 
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "kenya_lifespan_pmf_pyramid.json"
+  },
+  "vaccines": [
+    {
+      "name": "PCV10",
+      "susceptibility_reduction": {
+        "serotypes": ["1", "4", "5", "6A", "6B", "7F", "9V", "14", "18C", "19F", "23F"],  
+        "max": 0.1,
+        "relative": [0.89, 0.93, 1.0]
+      }
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 10000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 50,
+    "vaccinations": [
+      {
+        "vaccine": "PCV10",
+        "start_year": 148,
+        "start_day": 0,
+        "duration": 2,
+        "coverage": [
+          0.63, 0.67
+        ],
+        "schedule": [
+          42, 70, 98
+        ]
+      }
+    ]
+  },
+  "fitting": {
+    "max_iterations": 250,
+    "max_samples": 1,
+    "warm_up": 1.1,
+    "cool_down": 0.9,
+    "temperature_threshold": 0.7,
+    "observed_counts_file": "observed_counts_kenya_2012.json",
+    "vaccine_to_fit": "PCV10",
+    "initial_values": {
+      "max_susceptibility_reduction": 0.1
+    },
+    "initial_weights": {
+      "max_susceptibility_reduction": 1
+    }
+  }
+}
+

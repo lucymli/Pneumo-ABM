@@ -1,0 +1,69 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_sparc2.json",
+    "ranks_file": "fitted-ranks-us-no-sgi.json",
+    "base_duration": 20, 
+    "min_duration": 20,
+    "max_duration": 300
+  },
+  "host": {
+    "mu": 0.25, 
+    "epsilon": 0.25,
+    "sigma": 0.3,
+    "sigma_sg": 0.0
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.0191235,
+    "omega": 1e-6, 
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "united_states_lifespan_pmf_pyramid.json"
+  },
+  "vaccines": [
+    {
+      "name": "PCV7",
+      "serotypes": ["4", "6A", "6B", "9V", "14", "18C", "19F", "23F"],
+      "max_susceptibility_reduction": 0.1,
+      "relative_susceptibility_reductions": [0.89, 0.93, 1.0]
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 10000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 50,
+    "vaccinations": [
+      {
+        "vaccine": "PCV7",
+        "start_year": 142,
+        "start_day": 0,
+        "duration": 8,
+        "coverage": [
+          0.451, 0.864, 0.860, 0.873, 0.904, 0.949, 0.928
+        ],
+        "schedule": [
+          60, 120, 180, 360
+        ]
+      }
+    ]
+  },
+  "fitting": {
+    "max_iterations": 250,
+    "max_samples": 1,
+    "warm_up": 1.1,
+    "cool_down": 0.9,
+    "temperature_threshold": 0.7,
+    "observed_counts_file": "observed_counts_sparc2_2009.json",
+    "vaccine_to_fit": "PCV7",
+    "initial_values": {
+      "max_susceptibility_reduction": 0.1
+    },
+    "initial_weights": {
+      "max_susceptibility_reduction": 1
+    }
+  }
+}
+

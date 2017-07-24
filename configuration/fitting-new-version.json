@@ -1,0 +1,50 @@
+{
+  "num_iterations": 250,
+  "simulation_config_file": "",
+  "initial_point": {
+    "beta": 0.2,
+    "ranks_file": "",
+    "efficacies": {
+      "PCV13": 0.9
+    }
+  },
+  "functions": {
+    "loss": {
+      "name": "total_prevalence_absolute_loss",
+      "parameters": {
+        "num_samples": 25,
+        "target": 0.4
+      }
+    },
+    "perturb": {
+      "name": "",
+      "parameters": {}
+    },
+    "update": {
+      "name": "",
+      "parameters": {}
+    },
+    "boundary": {
+      "name": "standard_boundary",
+      "parameters": {}
+    }
+  }
+}
+
+
+
+    "max_samples": 25,
+    "warm_up": 1.1,
+    "cool_down": 0.9,
+    "temperature_threshold": 0.7,
+    
+    "observed_counts_file": "observed_counts_sparc2_2001.json",
+    "vaccine_to_fit": "",
+    "initial_values": {
+      "beta": 0.025,
+      "ranks_file": "initial_ranks_sparc2.json"
+    },
+    "initial_weights": {
+      "beta": 2,
+      "rank": 10
+    }
