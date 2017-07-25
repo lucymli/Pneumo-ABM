@@ -3,7 +3,7 @@ figure.dpi            : 150
 
 axes.facecolor        : white
 axes.edgecolor        : black
-axes.prop_cycle      : black
+axes.color_cycle      : black
 axes.titlesize        : 20
 axes.labelsize        : 16
 
