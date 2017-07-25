@@ -24,7 +24,7 @@ class Trial:
 
   def __init__(self, output_folder, run_number):
 
-    self.arms = {}
+    self.__arms = {}
 
     # get configuration details
     config_path = os.path.join(output_folder, 'configuration', 'configuration.json')
@@ -233,9 +233,9 @@ def get_prevalence(arm, sampling_days, serotypes=None, first_day=None):
         if hosts.has_key(row.id):
           del hosts[row.id]
     except:
-      print arm.config
-      print row
-      print hosts[row.id]
+      print(arm.config)
+      print(row)
+      print(hosts[row.id])
       raise RuntimeError('oops')
     
     previous_day = row.day
