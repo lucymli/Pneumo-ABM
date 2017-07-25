@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <string>
+#include <sstream>
 #include "event.h"
 #include "random_number_generator.h"
 #include "serotype.h"
