@@ -17,8 +17,11 @@ data.years <- unique(swab.data$year)
 age.groups <- levels(swab.data$age_range)
 age.group.labels <- paste0("(", 0:6, ", ", 1:7, "]")
 PCV7.serotypes <- c("4", "6B", "9V", "14", "18C", "19F", "23F")
-PCV13.added.serotypes <- c("1", "3", "5", "6A", "7F", "19A")
-PCV13.serotypes <- c(PCV7.serotypes, PCV13.added.serotypes)
+# PCV13.added.serotypes <- c("1", "3", "5", "6A", "7F", "19A")
+# PCV13.serotypes <- c(PCV7.serotypes, PCV13.added.serotypes)
+VRT.serotypes <- c("6A", "6C", "19A", "9A", "9N", "23A", "23B")
+total.vt.vrt.types <- length(c(PCV7.serotypes, VRT.serotypes))
+total.types <- length(serotypes)
 ```
 
 The total number of swabs increased between 2001 and 2014 for all age groups:
@@ -53,18 +56,25 @@ serotype.prev.list <- mapply(function (a,b) {
 
 The prevalence of serotypes targetted by the PCV7 vaccine declined after 2000. The prevalence of serotypes 7F and 19A increased in prevalence after PCV7 introduction, but declined after the introduction of PCV13 in 2010.
 
-    ## Warning in one_of(PCV13.serotypes): Unknown variables: `1`, `5`
+From 2001 to 2014, 28.1% of non-vaccine types (those not in PCV13) continuously decreased, 28.1% continuously increased, 34.4% increased after PCV7 introduction but decreased after PCV13 introduction, and 9.38% decreased after PCV7 introduction but increased after PCV13 introduction.
 
-From 2001 to 2014, 28.6% of non-vaccine types (those not in PCV13) continuously decreased, 31.4% continuously increased, 31.4% increased after PCV7 introduction but decreased after PCV13 introduction, and 8.57% decreased after PCV7 introduction but increased after PCV13 introduction.
-
-Overall, the prevalence of non-vaccine serotypes has increased by 234%.
+Overall, the prevalence of non-vaccine serotypes has increased by 226%.
 
 ``` r
-serotype.prev.all.long <- summarize.by.serotype(serotype.prev.list$all, PCV7.serotypes, PCV13.added.serotypes)
+serotype.prev.all.long <- summarize.by.serotype(serotype.prev.list$all, PCV7.serotypes, VRT.serotypes)
 ggplot(serotype.prev.all.long) + theme_bw() +
   geom_line(aes(x=year, y=frequency, colour=serotype)) +
-  facet_grid(vaccine~.) +
-  xlab("Year") + ylab("Prevalence")
+  geom_vline(xintercept=2010, linetype=2) +
+  facet_wrap(~vaccine) +
+  scale_colour_manual(values=c("#683567","#66b645","#723ec4","#b5a147","#cf4db7",
+                               "#66b390","#d03d56","#5b90b8","#d8723a","#8075cc",
+                               "#4b6431","#cf879f","#814330",
+                               rep("gray70", total.types-total.vt.vrt.types))) +
+  scale_x_continuous(breaks=c(data.years)) +
+  xlab("Year") + ylab("Prevalence") +
+  guides(colour=guide_legend(ncol=total.vt.vrt.types, byrow=TRUE)) +
+  theme(legend.position="bottom", text=element_text(size=14), axis.text=element_text(size=12),
+        strip.text=element_text(size=12))
 ```
 
 ![](01ExploratoryDataAnalysis_files/figure-markdown_github-ascii_identifiers/serotype.data.list.visualize-1.png)
