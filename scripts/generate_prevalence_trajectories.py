@@ -45,9 +45,9 @@ if __name__ == '__main__':
   num_samples = int(math.ceil(args.follow_up_days / float(args.days_between))) + 1
   days_since_birth = [k * args.days_between for k in range(num_samples)]
 
-  print '---Generate Prevalence Trajectories---'
-  print 'Event logs from {}'.format(os.path.abspath(args.logs_folder))
-  print 'Compute prevalences every {} days until at least {} days after birth.'.format(args.days_between, args.follow_up_days)
+  print('---Generate Prevalence Trajectories---')
+  print('Event logs from {}'.format(os.path.abspath(args.logs_folder)))
+  print('Compute prevalences every {} days until at least {} days after birth.'.format(args.days_between, args.follow_up_days))
 
   # create directory to store csv files
   dest_dir = os.path.join(args.logs_folder, 'trial-prevalences-{}-{}'.format(args.days_between, args.follow_up_days))
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     os.mkdir(dest_dir)
   except OSError:
     raise RuntimeError('Trying to create {}, but it already exists'.format(dest_dir))
-  print 'Prevalences will be written to {}'.format(os.path.abspath(dest_dir))
+  print('Prevalences will be written to {}'.format(os.path.abspath(dest_dir)))
   
   # create a csv file for each trial arm
   trial_0 = pn.Trial(args.logs_folder, 0)
