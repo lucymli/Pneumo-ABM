@@ -19,16 +19,19 @@ add.sum.data.frame <- function (list.of.df) {
   names(list.of.df$all) <- names(list.of.df[[1]])
   return (list.of.df)
 }
-summarize.by.serotype <- function (data.frame, PCV7.names, PCV13.names) {
+summarize.by.serotype <- function (data.frame, PCV7.names, VRT.names) {
   # Convert a wide data frame into a long data frame that describes changes in 
   # frequency as a function of time (year), stratified by serotypes and whether or
   # not the serotype is targeted by vaccines
   data.frame.long <- gather(data.frame, key="serotype", value="frequency", -year)
   data.frame.long$vaccine <- sapply(data.frame.long$serotype, function (x) {
     if (x%in%PCV7.names) return ("PCV7")
-    else if (x%in%PCV13.names) return ("PCV13")
+    else if (x%in%VRT.names) return ("VRT")
     else return ("NVT")
   })
+  other.names <- unique(data.frame.long$serotype)[!(unique(data.frame.long$serotype) %in% c(PCV7.names, VRT.names))]
+  data.frame.long$serotype <- factor(data.frame.long$serotype, levels=c(PCV7.names, VRT.names, other.names))
+  data.frame.long$vaccine <- factor(data.frame.long$vaccine, levels=c("PCV7", "VRT", "NVT"))
   return (data.frame.long)
 }
 percentage.increase <- function (vec) {
