@@ -92,7 +92,7 @@ def run_simulation(config_file, output_dir, num_trials=1):
   return_code = p.wait()
   if return_code != 0:
     for line in p.stderr:
-      print line
+      print(line)
     raise subprocess.CalledProcessError(return_code, cmd)
 
   return time.time() - t0
