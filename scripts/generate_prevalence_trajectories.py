@@ -2,10 +2,9 @@
 
 import argparse
 import csv
-import itertools
 import math
 import os
-import pneumodel.trial as pn
+import pneumodel_.trial as pn
 import sys
 import time
 
@@ -33,7 +32,7 @@ def _elapsed(start_time):
 
 def _transpose_csv(path, out):
   with open(path, 'r') as f:
-    zipped = itertools.izip(*csv.reader(f))
+    zipped = zip(*csv.reader(f))
   with open(out, 'w') as f:
     csv.writer(f).writerows(zipped)
 
