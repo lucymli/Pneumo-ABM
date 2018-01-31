@@ -1,0 +1,7 @@
+/Users/Lucy/Library/Developer/Xcode/DerivedData/PneumoModel-belevjtucuqczdbhskhafbyrpqrq/Build/Products/Debug/pneumo-model
+-t
+fit-transmission
+-c
+../configuration/fit-transmission-us.json
+-o
+fit-us-transmission-50iter-10000N
