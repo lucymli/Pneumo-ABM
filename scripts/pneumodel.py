@@ -7,7 +7,7 @@ import shutil
 import subprocess
 import time
 
-EXEC_PATH = '/Users/Lucy/Library/Developer/Xcode/DerivedData/PneumoModel-belevjtucuqczdbhskhafbyrpqrq/Build/Products/Debug/pneumo-model'
+EXEC_PATH = '../bin/pneumo-model'
 
 def _load_json(path):
   with open(path) as f:

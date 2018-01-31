@@ -37,3 +37,45 @@ summarize.by.serotype <- function (data.frame, PCV7.names, VRT.names) {
 percentage.increase <- function (vec) {
   scales::percent((vec[2] - vec[1]) / vec[1])
 }
+
+plot.serotypes.ts <- function (x, total.vt.vrt.types=14, x.axis.breaks=NULL) {
+  require(ggplot2)
+  total.types <- length(unique(x$serotype))
+  P <- ggplot(x) + theme_bw() +
+    geom_line(aes(x=year, y=prevalence, colour=serotype)) +
+    geom_vline(xintercept=c(2000, 2010), linetype=2) +
+    facet_wrap(~vaccine) +
+    scale_colour_manual(values=c("#683567","#66b645","#723ec4","#b5a147","#cf4db7",
+                                 "#66b390","#d03d56","#5b90b8","#d8723a","#8075cc",
+                                 "#4b6431","#cf879f","#814330",
+                                 rep("gray70", total.types-total.vt.vrt.types)))
+  if (!is.null(x.axis.breaks)) P <- P + scale_x_continuous(breaks=c(x.axis.breaks))
+  P <- P +
+    xlab("Year") + ylab("Prevalence") +
+    guides(colour=guide_legend(ncol=total.vt.vrt.types, byrow=TRUE)) +
+    theme(legend.position="bottom", text=element_text(size=14), axis.text=element_text(size=12),
+          strip.text=element_text(size=12))
+  return (P)
+}
+
+plot.serotypes.boxplot <- function (x, total.vt.vrt.types=14, x.axis.breaks=NULL) {
+  require(ggplot2)
+  total.types <- length(unique(x$serotype))
+  # binomial confidence intervals: https://www.researchgate.net/deref/http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBinomial_proportion_confidence_interval
+  std.errs <- sqrt(x$prevalence * (1-x$prevalence) / x$N)
+  x$lower <- sapply(x$prevalence - std.errs, max, 0)
+  x$upper <- sapply(x$prevalence + std.errs, min, 1)
+  P <- ggplot(x) + theme_bw() + 
+    geom_pointrange(aes(x=serotype, y=prevalence, ymin=lower, ymax=upper, colour=factor(year)), position=position_dodge(width=0.3)) +
+    # geom_errorbar(aes(x=serotype, ymin=lower, ymax=upper, colour=factor(year)), position="dodge") +
+    facet_grid(dataset~vaccine, scales="free_x", drop=TRUE)+
+    scale_colour_manual(values=c("#683567","#66b645","#723ec4","#b5a147","#cf4db7",
+                                 "#66b390","#d03d56","#5b90b8","#d8723a","#8075cc",
+                                 "#4b6431","#cf879f","#814330",
+                                 rep("gray70", total.types-total.vt.vrt.types))) +
+    xlab("Serotype") + ylab("Prevalence") +
+    guides(colour=guide_legend(title="Year", ncol=total.vt.vrt.types, byrow=TRUE)) +
+    theme(legend.position="bottom", text=element_text(size=14), axis.text=element_text(size=12),
+          strip.text=element_text(size=12))
+  return (P)
+}

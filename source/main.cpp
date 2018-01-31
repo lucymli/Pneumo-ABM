@@ -7,7 +7,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
 #include <boost/property_tree/ptree.hpp>
-#include <omp.h>
+//#include <omp.h>
 #include "configuration.h"
 #include "serotype.h"
 #include "vaccine.h"
@@ -120,10 +120,10 @@ int main(int argc, char** argv) {
   Host::configure(config_file);
 
   // perform task
-  omp_set_dynamic(0);     // Explicitly disable dynamic teams
+  /*omp_set_dynamic(0);     // Explicitly disable dynamic teams
   if (num_trials < 4) omp_set_num_threads(num_trials);
   else omp_set_num_threads(4);
-#pragma omp parallel for
+#pragma omp parallel for*/
   for(int i = 0; i < num_trials; i++) {
     std::string output_folder_i;
     output_folder_i = (fs::path(output_folder) / ("trial-" + std::to_string(i))).string(); 

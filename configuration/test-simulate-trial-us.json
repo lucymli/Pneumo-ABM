@@ -1,0 +1,84 @@
+{
+  "serotype": {
+    "serotypes_file": "serotypes_sparc2.json",
+    "ranks_file": "ranks-us-isppd-0.3-sg-150-max-duration.json",
+    "base_duration": 20,
+    "min_duration": 20,
+    "max_duration": 150
+  },
+  "host": {
+    "mu": 0.25,
+    "epsilon": 0.25,
+    "sigmas_file": "sigmas_sparc2.json",
+    "sigma_sg": 0.3,
+    "halflife_st": -1,
+    "halflife_sg": -1
+  },
+  "population": {
+    "max_age": 101,
+    "beta": 0.205044,
+    "omega": 1e-6,
+    "initial_colonization_prob": 0.02,
+    "lifespan_pmf_file": "lifespan_pmf_pyramid_united_states.json",
+    "age_mixing_file": "mixing_dutch.json"
+  },
+  "vaccines": [
+    {
+      "name": "PLACEBO",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.0,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "GOOD",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 0.7,
+        "relative": [ 1.0 ]
+      }
+    },
+    {
+      "name": "SUPER",
+      "susceptibility_reduction": {
+        "serotypes": [ "all" ],
+        "max": 1.0,
+        "relative": [ 1.0 ]
+      }
+    }
+  ],
+  "simulation": {
+    "num_initial_hosts": 25000,
+    "num_past_colonizations": 25,
+    "num_years_burn_in": {
+      "demographic": 50,
+      "epidemiologic": 50
+    },
+    "num_years_simulation": 50,
+    "vaccinations": [],
+    "trial_arms": [
+      {
+        "name": "control",
+        "num_subjects": 500,
+        "start_year": 145,
+        "vaccine": "PLACEBO",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "good",
+        "num_subjects": 500,
+        "start_year": 145,
+        "vaccine": "GOOD",
+        "schedule": [ 60 ]
+      },
+      {
+        "name": "super",
+        "num_subjects": 500,
+        "start_year": 145,
+        "vaccine": "SUPER",
+        "schedule": [ 60 ]
+      }
+    ]
+  }
+}

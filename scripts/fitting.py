@@ -18,10 +18,10 @@ def _log_factorial(n):
   ''' log(n!) using Ramanujan's approximation '''
   assert n > 0
   return (
-    n * math.log(n) - n
-    + math.log(1.0 + 1.0 / (2.0 * n) + 1.0 / (8.0 * n * n)) / 6.0 
-    + math.log(2.0 * n) / 2.0
-    + math.log(3.141592653589793238462643383) / 2.0
+    n * math.log(n) - n +
+          math.log(1.0 + 1.0 / (2.0 * n) + 1.0 / (8.0 * n * n)) / 6.0 +
+          math.log(2.0 * n) / 2.0 +
+          math.log(3.141592653589793238462643383) / 2.0
   )
 
 def _multinomial_loglikelihood(p, x):
@@ -31,7 +31,6 @@ def _multinomial_loglikelihood(p, x):
     assert 0.0 <= p_i <= 1
   for x_i in x:
     assert x >= 0
-
   n = sum(x)
   llh = _log_factorial(n)
   for p_i, x_i in zip(p, x):
@@ -39,15 +38,12 @@ def _multinomial_loglikelihood(p, x):
   return llh
 
 
-def total_prevalence_absolute_loss(config_file, theta, output_dir)
-  
+def total_prevalence_absolute_loss(config_file, theta, output_dir):
   # set point by updating config file
   _update_config(config_file, theta)
-
   # get results
   pneumodel.run_simulation(config_file, output_dir)
   results = pneumodel.get_simulation_results(output_dir)
-
   ...
 
 #########################
@@ -109,7 +105,7 @@ def fit_model(config_file, output_dir, theta, loss_func, perturb_func, update_fu
 
   get_output_dir = lambda i, j: os.path.join('iter-{}'.format(i), 'point-{}'.format(j))
 
-  print 'Starting fitting process...'
+  print ('Starting fitting process...')
   history = []
 
   # make a working copy of the configuration files
@@ -121,7 +117,7 @@ def fit_model(config_file, output_dir, theta, loss_func, perturb_func, update_fu
   # iterations of the fitting process
   for i in range(n_iters):
     t0_iter = time.time()
-    print 'Iteration {} of {}...'.format(i + 1, n_iters),
+    print ('Iteration {} of {}...'.format(i + 1, n_iters),)
 
     # perturb points
     perturbed = perturb_func(i, theta)
@@ -129,8 +125,8 @@ def fit_model(config_file, output_dir, theta, loss_func, perturb_func, update_fu
     # calculate losses at perturbed points
     losses = []
     for j, p in enumerate(perturbed):
-      print '\tCalculating loss for {} of {} points...'.format(j, len(perturbed)),
-      losses.append(p, loss(working_config_file, p), get_output_dir(i + 1, j))
+      print ('\tCalculating loss for {} of {} points...'.format(j, len(perturbed)),
+      losses.append(p, loss(working_config_file, p), get_output_dir(i + 1, j)))
 
     # propose the next point, apply boundary conditions
     proposal = update_func(i, losses)
@@ -141,7 +137,7 @@ def fit_model(config_file, output_dir, theta, loss_func, perturb_func, update_fu
 
     # display time elapsed for this iteration
     t_iter = time.time() - t0_iter
-    print 'completed. {}m {}s'.format(int(t_iter / 60), t_iter % 60)
+    print ('completed. {}m {}s'.format(int(t_iter / 60), t_iter % 60))
 
 
 

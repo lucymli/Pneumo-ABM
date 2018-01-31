@@ -1,0 +1,35 @@
+\hypertarget{class_scribe}{}\section{Scribe Class Reference}
+\label{class_scribe}\index{Scribe@{Scribe}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scribe_a5fc74006259eba4e38e7d5469ae15941}\label{class_scribe_a5fc74006259eba4e38e7d5469ae15941}} 
+{\bfseries Scribe} (std\+::string dir)
+\item 
+\mbox{\Hypertarget{class_scribe_ad9f897d97b0ab7c7913a47fa18353e25}\label{class_scribe_ad9f897d97b0ab7c7913a47fa18353e25}} 
+std\+::ofstream \& {\bfseries get\+\_\+filestream} (std\+::string filename)
+\item 
+\mbox{\Hypertarget{class_scribe_a44f8f2c7c3b799c2efc0d26b9b7c3f1e}\label{class_scribe_a44f8f2c7c3b799c2efc0d26b9b7c3f1e}} 
+void {\bfseries copy\+\_\+file} (std\+::string filepath)
+\item 
+\mbox{\Hypertarget{class_scribe_a9ed32e035044cf260c57c290559c55df}\label{class_scribe_a9ed32e035044cf260c57c290559c55df}} 
+void {\bfseries copy\+\_\+folder} (std\+::string folderpath)
+\item 
+\mbox{\Hypertarget{class_scribe_a7d7f1646523faf26e160fcbfb8837971}\label{class_scribe_a7d7f1646523faf26e160fcbfb8837971}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries note\+\_\+value} (T value, std\+::string filename)
+\item 
+\mbox{\Hypertarget{class_scribe_a95cc9acb5e0a633506c1aa80e4aef844}\label{class_scribe_a95cc9acb5e0a633506c1aa80e4aef844}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries note\+\_\+values} (std\+::vector$<$ T $>$ values, std\+::string filename)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scribe_ab69d020881e9e7ab5b2bd1b724ecefc2}\label{class_scribe_ab69d020881e9e7ab5b2bd1b724ecefc2}} 
+{\footnotesize template$<$typename T $>$ }\\static void {\bfseries write\+\_\+vector\+\_\+as\+\_\+csv} (std\+::vector$<$ T $>$ const \&vector, std\+::ofstream \&out)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scribe.\+h\item 
+scribe.\+cpp\end{DoxyCompactItemize}

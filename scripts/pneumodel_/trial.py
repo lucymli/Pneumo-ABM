@@ -72,8 +72,8 @@ class TrialArm:
   """
 
   def __init__(self, config, log):
-    self.config = config
-    self.log = log
+    self.__config = config
+    self.__log = log
 
   @property
   def config(self):
@@ -171,7 +171,7 @@ def _get_num_colonized(hosts, serotypes=None):
 
   """
   count = 0
-  for host_id, carriage in hosts.iteritems():
+  for host_id, carriage in hosts.items():
     if serotypes:
       is_colonized = any(s in carriage for s in serotypes)
     else:

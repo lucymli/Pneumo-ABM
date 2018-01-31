@@ -1,0 +1,83 @@
+\hypertarget{class_population}{}\section{Population Class Reference}
+\label{class_population}\index{Population@{Population}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_population_1_1_statistics}{Statistics}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_population_a5fc7a00f0057d03c8b3cdbe74558ba52}\label{class_population_a5fc7a00f0057d03c8b3cdbe74558ba52}} 
+{\bfseries Population} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_calendar}{Calendar} $>$ calendar\+\_\+ptr, std\+::shared\+\_\+ptr$<$ \hyperlink{class_random_number_generator}{Random\+Number\+Generator} $>$ rng\+\_\+ptr, std\+::string config\+\_\+path)
+\item 
+\mbox{\Hypertarget{class_population_a795206369ee584c0c1451eae124650d6}\label{class_population_a795206369ee584c0c1451eae124650d6}} 
+bool {\bfseries has\+\_\+host} (int host\+\_\+id) const
+\item 
+\mbox{\Hypertarget{class_population_a49655a081dcd91772d72e764ed505602}\label{class_population_a49655a081dcd91772d72e764ed505602}} 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{class_host}{Host} $>$ {\bfseries find\+\_\+host} (int host\+\_\+id) const
+\item 
+\mbox{\Hypertarget{class_population_a4148c12da584f3ccb9fb737dc0487df7}\label{class_population_a4148c12da584f3ccb9fb737dc0487df7}} 
+std\+::vector$<$ int $>$ {\bfseries initialize} (int num\+\_\+hosts)
+\item 
+\mbox{\Hypertarget{class_population_ad9bd50ce1cb35e3dcdd1244057973b7c}\label{class_population_ad9bd50ce1cb35e3dcdd1244057973b7c}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries seed\+\_\+colonizations} ()
+\item 
+\mbox{\Hypertarget{class_population_ab7eefdbcf57813e2eb903e914223dda4}\label{class_population_ab7eefdbcf57813e2eb903e914223dda4}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries determine\+\_\+colonizations} ()
+\item 
+\mbox{\Hypertarget{class_population_a676fb6dd79bef478f540aadbd8310eb7}\label{class_population_a676fb6dd79bef478f540aadbd8310eb7}} 
+void {\bfseries seed\+\_\+past\+\_\+colonizations} (int num\+\_\+past\+\_\+colonizations)
+\item 
+\mbox{\Hypertarget{class_population_a9c5fdd1a32ce33f6bd5e1bc978aab799}\label{class_population_a9c5fdd1a32ce33f6bd5e1bc978aab799}} 
+void {\bfseries verify} () const
+\item 
+\mbox{\Hypertarget{class_population_a6c3f3d845734d899d842908f4086b211}\label{class_population_a6c3f3d845734d899d842908f4086b211}} 
+int {\bfseries birth\+\_\+host} (std\+::string trial\+\_\+arm\+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{class_population_ac2b8907a29f8a87429ecb73a47708a64}\label{class_population_ac2b8907a29f8a87429ecb73a47708a64}} 
+void {\bfseries remove\+\_\+host} (int host\+\_\+id)
+\item 
+\mbox{\Hypertarget{class_population_a14c15a068f30d948181db14b33387f14}\label{class_population_a14c15a068f30d948181db14b33387f14}} 
+int {\bfseries colonize\+\_\+host} (int host\+\_\+id, int serotype)
+\item 
+\mbox{\Hypertarget{class_population_a9a55852732be604b635b16d3321153f8}\label{class_population_a9a55852732be604b635b16d3321153f8}} 
+void {\bfseries recover\+\_\+host} (int host\+\_\+id)
+\item 
+\mbox{\Hypertarget{class_population_ae07dcab12ee94b00f7366f919365cbfa}\label{class_population_ae07dcab12ee94b00f7366f919365cbfa}} 
+void {\bfseries vaccinate\+\_\+host} (int host\+\_\+id, std\+::string vaccine\+\_\+name)
+\item 
+\mbox{\Hypertarget{class_population_abaecaa2e94d7869a831872aa143d7018}\label{class_population_abaecaa2e94d7869a831872aa143d7018}} 
+void {\bfseries update\+\_\+host\+\_\+age\+\_\+group} (int host\+\_\+id)
+\item 
+\mbox{\Hypertarget{class_population_af8f81bd8da9c4c2bb1027328b6197a47}\label{class_population_af8f81bd8da9c4c2bb1027328b6197a47}} 
+int {\bfseries get\+\_\+max\+\_\+age} () const
+\item 
+\mbox{\Hypertarget{class_population_a231245721d8634e1717fb45893243aac}\label{class_population_a231245721d8634e1717fb45893243aac}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+lifespan\+\_\+pmf} () const
+\item 
+\mbox{\Hypertarget{class_population_a2c3e7a74d5f2e2bc32b82f5be5cee8d3}\label{class_population_a2c3e7a74d5f2e2bc32b82f5be5cee8d3}} 
+double {\bfseries get\+\_\+beta} () const
+\item 
+\mbox{\Hypertarget{class_population_aad0f4342c423e314830a01465ff9e0a4}\label{class_population_aad0f4342c423e314830a01465ff9e0a4}} 
+double {\bfseries get\+\_\+omega} () const
+\item 
+\mbox{\Hypertarget{class_population_ad7e9d661c3f896fdfb9ed5ac43325e17}\label{class_population_ad7e9d661c3f896fdfb9ed5ac43325e17}} 
+double {\bfseries get\+\_\+initial\+\_\+colonization\+\_\+prob} () const
+\item 
+\mbox{\Hypertarget{class_population_a7e1d302dfed06509d6c65ee8d646fc20}\label{class_population_a7e1d302dfed06509d6c65ee8d646fc20}} 
+void {\bfseries set\+\_\+beta} (double beta)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_population_a77654769dc98036408b381f6d63d5aa4}\label{class_population_a77654769dc98036408b381f6d63d5aa4}} 
+const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_population_1_1_statistics}{Statistics} $>$ {\bfseries stats}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+population.\+h\item 
+scratch.\+h\item 
+population.\+cpp\end{DoxyCompactItemize}

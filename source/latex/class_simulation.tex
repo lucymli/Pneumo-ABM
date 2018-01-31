@@ -1,0 +1,33 @@
+\hypertarget{class_simulation}{}\section{Simulation Class Reference}
+\label{class_simulation}\index{Simulation@{Simulation}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_simulation_acdec9ef2f95cac1b13493fd8436ae140}\label{class_simulation_acdec9ef2f95cac1b13493fd8436ae140}} 
+enum {\bfseries Mode} \{ {\bfseries Demographic}, 
+{\bfseries Epidemiologic}, 
+{\bfseries Simulation}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_simulation_a19a6806604e22961e5239d09fd47fcfc}\label{class_simulation_a19a6806604e22961e5239d09fd47fcfc}} 
+{\bfseries Simulation} (int seed, std\+::string config\+\_\+path, std\+::string output\+\_\+dir)
+\item 
+\mbox{\Hypertarget{class_simulation_adbbb20197026d6b23340b8e6ce1c0ebc}\label{class_simulation_adbbb20197026d6b23340b8e6ce1c0ebc}} 
+void {\bfseries set\+\_\+population\+\_\+beta} (double beta)
+\item 
+\mbox{\Hypertarget{class_simulation_a3f97c8ff822efbe01fad01fed16031d5}\label{class_simulation_a3f97c8ff822efbe01fad01fed16031d5}} 
+double {\bfseries get\+\_\+population\+\_\+beta} () const
+\item 
+\mbox{\Hypertarget{class_simulation_a956d3e04043017ec5a5cc843f95290fa}\label{class_simulation_a956d3e04043017ec5a5cc843f95290fa}} 
+std\+::vector$<$ Snapshot $>$ {\bfseries run} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scratch.\+h\item 
+simulation.\+h\item 
+simulation.\+cpp\end{DoxyCompactItemize}

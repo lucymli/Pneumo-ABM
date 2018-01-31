@@ -1,0 +1,56 @@
+\hypertarget{class_age_group}{}\section{Age\+Group Class Reference}
+\label{class_age_group}\index{Age\+Group@{Age\+Group}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_age_group_adf1c5c8fc44ea29727a430708e7f0f1c}\label{class_age_group_adf1c5c8fc44ea29727a430708e7f0f1c}} 
+{\bfseries Age\+Group} (std\+::pair$<$ int, int $>$ age\+\_\+range, int num\+\_\+serotypes, std\+::shared\+\_\+ptr$<$ \hyperlink{class_random_number_generator}{Random\+Number\+Generator} $>$ rng\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{class_age_group_a5635c512197bff35d046c5d7ed761c77}\label{class_age_group_a5635c512197bff35d046c5d7ed761c77}} 
+std\+::pair$<$ int, int $>$ {\bfseries get\+\_\+age\+\_\+range} () const
+\item 
+\mbox{\Hypertarget{class_age_group_a94e1e305d172feebc00247b496116c8f}\label{class_age_group_a94e1e305d172feebc00247b496116c8f}} 
+bool {\bfseries contains\+\_\+age} (int age) const
+\item 
+\mbox{\Hypertarget{class_age_group_aebc8e0d17e5b1b5656ac8f35c8da67d8}\label{class_age_group_aebc8e0d17e5b1b5656ac8f35c8da67d8}} 
+bool {\bfseries contains\+\_\+host\+\_\+id} (int host\+\_\+id) const
+\item 
+\mbox{\Hypertarget{class_age_group_a12d7a84c11725bda07685e09338e64bc}\label{class_age_group_a12d7a84c11725bda07685e09338e64bc}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_age_group_a6d346dd94d6e0229d00b25e5f77a337f}\label{class_age_group_a6d346dd94d6e0229d00b25e5f77a337f}} 
+int {\bfseries effective\+\_\+size} () const
+\item 
+\mbox{\Hypertarget{class_age_group_ac17a9b4d84ad429f0aa2afab53d4a251}\label{class_age_group_ac17a9b4d84ad429f0aa2afab53d4a251}} 
+double {\bfseries get\+\_\+num\+\_\+effective\+\_\+colonizations} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_age_group_a63d7356cdca7b868c94ac4d9074344c1}\label{class_age_group_a63d7356cdca7b868c94ac4d9074344c1}} 
+const std\+::vector$<$ int $>$ {\bfseries get\+\_\+host\+\_\+ids} () const
+\item 
+\mbox{\Hypertarget{class_age_group_a15d25df3c9824bcc8a7f985801badd97}\label{class_age_group_a15d25df3c9824bcc8a7f985801badd97}} 
+int {\bfseries draw\+\_\+random\+\_\+host\+\_\+id} () const
+\item 
+\mbox{\Hypertarget{class_age_group_a84a137cefc721b6aab94e1c07dc752d6}\label{class_age_group_a84a137cefc721b6aab94e1c07dc752d6}} 
+void {\bfseries add\+\_\+host} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_host}{Host} $>$ host\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{class_age_group_a82c4bf166bbf0809a34111292bc31bdb}\label{class_age_group_a82c4bf166bbf0809a34111292bc31bdb}} 
+void {\bfseries remove\+\_\+host} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_host}{Host} $>$ host\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{class_age_group_aff4d379276ddce16962cb864327d77d4}\label{class_age_group_aff4d379276ddce16962cb864327d77d4}} 
+void {\bfseries update} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_host}{Host} $>$ host\+\_\+ptr, int serotype, std\+::string event)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_age_group_a8c3dac4ad810d06595dae16a8a26c1e4}\label{class_age_group_a8c3dac4ad810d06595dae16a8a26c1e4}} 
+{\footnotesize template$<$class Input\+Iterator $>$ }\\static Input\+Iterator {\bfseries find\+\_\+by\+\_\+age} (Input\+Iterator first, Input\+Iterator last, int age)
+\item 
+\mbox{\Hypertarget{class_age_group_a2901bfaad8b6444b16ac35c684c3c2b3}\label{class_age_group_a2901bfaad8b6444b16ac35c684c3c2b3}} 
+{\footnotesize template$<$class Input\+Iterator $>$ }\\static Input\+Iterator {\bfseries find\+\_\+by\+\_\+host\+\_\+id} (Input\+Iterator first, Input\+Iterator last, int host\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+age\+\_\+group.\+h\item 
+age\+\_\+group.\+cpp\end{DoxyCompactItemize}

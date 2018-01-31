@@ -1,0 +1,35 @@
+\hypertarget{class_vaccine}{}\section{Vaccine Class Reference}
+\label{class_vaccine}\index{Vaccine@{Vaccine}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vaccine_adfa2c28ffc6235a12af80b9b85bb6db7}\label{class_vaccine_adfa2c28ffc6235a12af80b9b85bb6db7}} 
+enum {\bfseries Effect\+Type} \{ {\bfseries Susceptibility}, 
+{\bfseries Infectiousness}, 
+{\bfseries Duration}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vaccine_ab56911f72aefbdf4c57e7fb7065757e9}\label{class_vaccine_ab56911f72aefbdf4c57e7fb7065757e9}} 
+static std\+::vector$<$ std\+::string $>$ {\bfseries get\+\_\+names} ()
+\item 
+\mbox{\Hypertarget{class_vaccine_a345f231eaf3cc16f19e77594432c215b}\label{class_vaccine_a345f231eaf3cc16f19e77594432c215b}} 
+static bool {\bfseries targets\+\_\+serotype} (std\+::string name, Effect\+Type type, std\+::string serotype\+\_\+name)
+\item 
+\mbox{\Hypertarget{class_vaccine_a47b11de0ede15030839eb4e8c37363ca}\label{class_vaccine_a47b11de0ede15030839eb4e8c37363ca}} 
+static double {\bfseries get\+\_\+reduction} (std\+::string name, Effect\+Type type, int num\+\_\+doses)
+\item 
+\mbox{\Hypertarget{class_vaccine_a73fab01c5099698a98494dfa9d01e3c3}\label{class_vaccine_a73fab01c5099698a98494dfa9d01e3c3}} 
+static void {\bfseries set\+\_\+max\+\_\+reduction} (std\+::string name, Effect\+Type type, double max\+\_\+reduction)
+\item 
+\mbox{\Hypertarget{class_vaccine_a40a0c7acd6f4f01b35e02016c4c9ae0f}\label{class_vaccine_a40a0c7acd6f4f01b35e02016c4c9ae0f}} 
+static void {\bfseries configure} (std\+::string config\+\_\+file)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+vaccine.\+h\item 
+vaccine.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{class_event}{}\section{Event Class Reference}
+\label{class_event}\index{Event@{Event}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_event_a2abf13b5be49315e9e362af02029f058}\label{class_event_a2abf13b5be49315e9e362af02029f058}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries Birthday}, 
+{\bfseries Colonization}, 
+{\bfseries Vaccination}, 
+{\bfseries Recovery}, 
+\newline
+{\bfseries Death}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_event_a8a3e3dd1f4fa9e4e5e88569dce33d459}\label{class_event_a8a3e3dd1f4fa9e4e5e88569dce33d459}} 
+{\bfseries Event} (int host\+\_\+id, int day, Type type, bool no\+\_\+offset=false)
+\item 
+\mbox{\Hypertarget{class_event_ad4d3beab41cb5dc749982463d5acc209}\label{class_event_ad4d3beab41cb5dc749982463d5acc209}} 
+{\bfseries Event} (int host\+\_\+id, int day, Type type, int serotype)
+\item 
+\mbox{\Hypertarget{class_event_aec558a3140f11d745ca0bb4fda5c3ad3}\label{class_event_aec558a3140f11d745ca0bb4fda5c3ad3}} 
+{\bfseries Event} (int host\+\_\+id, int day, Type type, int serotype, int day\+\_\+of\+\_\+colonzation)
+\item 
+\mbox{\Hypertarget{class_event_aa1212ada7b2813ef9c619b22b423a48c}\label{class_event_aa1212ada7b2813ef9c619b22b423a48c}} 
+{\bfseries Event} (int host\+\_\+id, int day, Type type, std\+::string vaccine\+\_\+name)
+\item 
+\mbox{\Hypertarget{class_event_af9f150a2c48021fe3ee4866848f6e8f5}\label{class_event_af9f150a2c48021fe3ee4866848f6e8f5}} 
+int {\bfseries get\+\_\+host\+\_\+id} () const
+\item 
+\mbox{\Hypertarget{class_event_adc57f1767bcd3ab2b136d8ac34efbec3}\label{class_event_adc57f1767bcd3ab2b136d8ac34efbec3}} 
+int {\bfseries get\+\_\+day} () const
+\item 
+\mbox{\Hypertarget{class_event_ab27e0682049384339d2c2bbfce232abd}\label{class_event_ab27e0682049384339d2c2bbfce232abd}} 
+Type {\bfseries get\+\_\+type} () const
+\item 
+\mbox{\Hypertarget{class_event_af85a4a32877cb7de66a0cb537cc58679}\label{class_event_af85a4a32877cb7de66a0cb537cc58679}} 
+int {\bfseries get\+\_\+serotype} () const
+\item 
+\mbox{\Hypertarget{class_event_a7bd7b82ccdd642e0615cb972eea8bb5b}\label{class_event_a7bd7b82ccdd642e0615cb972eea8bb5b}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+colonization} () const
+\item 
+\mbox{\Hypertarget{class_event_aa1844443277fa45a9f1261c6048e3639}\label{class_event_aa1844443277fa45a9f1261c6048e3639}} 
+std\+::string {\bfseries get\+\_\+vaccine\+\_\+name} () const
+\item 
+\mbox{\Hypertarget{class_event_ae6a5c791f9bdfbf9f5b46ccb054a2edd}\label{class_event_ae6a5c791f9bdfbf9f5b46ccb054a2edd}} 
+double {\bfseries get\+\_\+day\+\_\+offset} () const
+\item 
+\mbox{\Hypertarget{class_event_a8d73661ed32c9313e521067847241a7a}\label{class_event_a8d73661ed32c9313e521067847241a7a}} 
+std\+::string {\bfseries as\+\_\+csv\+\_\+string} (bool abbreviated=false) const
+\item 
+\mbox{\Hypertarget{class_event_a6c070e8addea9b6ac56b382c9fc493c8}\label{class_event_a6c070e8addea9b6ac56b382c9fc493c8}} 
+{\bfseries Life\+Event} (int day\+\_\+of\+\_\+event, Type type)
+\item 
+\mbox{\Hypertarget{class_event_a34f44553c3bf19dda43d6e176b577e26}\label{class_event_a34f44553c3bf19dda43d6e176b577e26}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+event} () const
+\item 
+\mbox{\Hypertarget{class_event_a539fbcc1024a8081cb36b0f27ae4e379}\label{class_event_a539fbcc1024a8081cb36b0f27ae4e379}} 
+Type {\bfseries get\+\_\+type} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+event.\+h\item 
+scratch.\+h\item 
+event.\+cpp\end{DoxyCompactItemize}

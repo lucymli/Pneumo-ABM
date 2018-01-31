@@ -1,0 +1,135 @@
+\hypertarget{class_host}{}\section{Host Class Reference}
+\label{class_host}\index{Host@{Host}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_host_a7e63fd0bd3641d2ce7ccc18926904a65}\label{class_host_a7e63fd0bd3641d2ce7ccc18926904a65}} 
+{\bfseries Host} (int day\+\_\+of\+\_\+birth, int day\+\_\+of\+\_\+death, std\+::shared\+\_\+ptr$<$ const \hyperlink{class_calendar}{Calendar} $>$ calendar\+\_\+ptr, std\+::shared\+\_\+ptr$<$ \hyperlink{class_random_number_generator}{Random\+Number\+Generator} $>$ rng\+\_\+ptr, std\+::string trial\+\_\+arm\+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{class_host_abfc1d181c7ca77884210c4f1595374e2}\label{class_host_abfc1d181c7ca77884210c4f1595374e2}} 
+int {\bfseries get\+\_\+id} () const
+\item 
+\mbox{\Hypertarget{class_host_ac1b050c046bfdbf72ec4baa17ee88ca8}\label{class_host_ac1b050c046bfdbf72ec4baa17ee88ca8}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+birth} () const
+\item 
+\mbox{\Hypertarget{class_host_ab655243bf3c03ce6ce912f3f29034548}\label{class_host_ab655243bf3c03ce6ce912f3f29034548}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+death} () const
+\item 
+\mbox{\Hypertarget{class_host_afd34881bf53b24e94f615580d482222f}\label{class_host_afd34881bf53b24e94f615580d482222f}} 
+int {\bfseries get\+\_\+lifespan} () const
+\item 
+\mbox{\Hypertarget{class_host_a356b8fac382aab0302d55b626f7647eb}\label{class_host_a356b8fac382aab0302d55b626f7647eb}} 
+int {\bfseries calculate\+\_\+age} () const
+\item 
+\mbox{\Hypertarget{class_host_a7121157557cc392690042fcefd7e79bb}\label{class_host_a7121157557cc392690042fcefd7e79bb}} 
+int {\bfseries calculate\+\_\+age\+\_\+in\+\_\+days} () const
+\item 
+\mbox{\Hypertarget{class_host_a1b90e4faeded137c0b4d75fde86c21e9}\label{class_host_a1b90e4faeded137c0b4d75fde86c21e9}} 
+int {\bfseries get\+\_\+num\+\_\+colonizations} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_a10354097068db8cf21d37484ea5fce83}\label{class_host_a10354097068db8cf21d37484ea5fce83}} 
+int {\bfseries get\+\_\+num\+\_\+colonizations} () const
+\item 
+\mbox{\Hypertarget{class_host_af9ba19474bf1c997bf45ec99deab469d}\label{class_host_af9ba19474bf1c997bf45ec99deab469d}} 
+int {\bfseries get\+\_\+num\+\_\+past\+\_\+colonizations} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_ac3b2c4aa559d6c2484392bbc41acc336}\label{class_host_ac3b2c4aa559d6c2484392bbc41acc336}} 
+int {\bfseries get\+\_\+num\+\_\+past\+\_\+colonizations} () const
+\item 
+\mbox{\Hypertarget{class_host_a6f1f9314c6ee49a860bece6a8f492d9a}\label{class_host_a6f1f9314c6ee49a860bece6a8f492d9a}} 
+int {\bfseries get\+\_\+num\+\_\+serotypes} () const
+\item 
+\mbox{\Hypertarget{class_host_a363ca1e5112f127fda71f9a45f3cf551}\label{class_host_a363ca1e5112f127fda71f9a45f3cf551}} 
+void {\bfseries verify\+\_\+num\+\_\+colonizations} () const
+\item 
+\mbox{\Hypertarget{class_host_ae315e3f03e57780e7944812568ab1649}\label{class_host_ae315e3f03e57780e7944812568ab1649}} 
+double {\bfseries get\+\_\+susceptibility} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_a12b6c482c793650dc6a50be41fdbc181}\label{class_host_a12b6c482c793650dc6a50be41fdbc181}} 
+double {\bfseries get\+\_\+infectiousness} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_aec45cad9f2784714cd7af0c4f5cf9640}\label{class_host_aec45cad9f2784714cd7af0c4f5cf9640}} 
+double {\bfseries get\+\_\+duration\+\_\+factor} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_a2c7466e4ab5466be7cea79ca464c99c1}\label{class_host_a2c7466e4ab5466be7cea79ca464c99c1}} 
+void {\bfseries acquire\+\_\+past\+\_\+colonizations} (int serotype, int n)
+\item 
+\mbox{\Hypertarget{class_host_a90b244d215650ffae95718d01e97620a}\label{class_host_a90b244d215650ffae95718d01e97620a}} 
+\hyperlink{class_colonization}{Colonization} {\bfseries sample\+\_\+colonization} () const
+\item 
+\mbox{\Hypertarget{class_host_a6fd8397fa4117c475d9a0251228ceb8c}\label{class_host_a6fd8397fa4117c475d9a0251228ceb8c}} 
+\hyperlink{class_colonization}{Colonization} {\bfseries acquire\+\_\+colonization} (int serotype)
+\item 
+\mbox{\Hypertarget{class_host_a1c83f73e43316586407e721208d5e704}\label{class_host_a1c83f73e43316586407e721208d5e704}} 
+std\+::vector$<$ int $>$ {\bfseries remove\+\_\+expired\+\_\+colonizations} ()
+\item 
+\mbox{\Hypertarget{class_host_a69d098ceeaac81c3b6545b8f2ba189b5}\label{class_host_a69d098ceeaac81c3b6545b8f2ba189b5}} 
+void {\bfseries acquire\+\_\+vaccination} (std\+::string vaccine\+\_\+name)
+\item 
+\mbox{\Hypertarget{class_host_a2b04ced718b86ae04af2097fbf369360}\label{class_host_a2b04ced718b86ae04af2097fbf369360}} 
+int {\bfseries get\+\_\+num\+\_\+vaccinations} (std\+::string vaccine\+\_\+name) const
+\item 
+\mbox{\Hypertarget{class_host_aa2db492a08b642254b80ecc590b15dc3}\label{class_host_aa2db492a08b642254b80ecc590b15dc3}} 
+std\+::string {\bfseries get\+\_\+trial\+\_\+arm\+\_\+name} () const
+\item 
+\mbox{\Hypertarget{class_host_aad27a8ad2d8129fb19830cb2efc03a3d}\label{class_host_aad27a8ad2d8129fb19830cb2efc03a3d}} 
+bool {\bfseries is\+\_\+in\+\_\+trial} () const
+\item 
+\mbox{\Hypertarget{class_host_ab655243bf3c03ce6ce912f3f29034548}\label{class_host_ab655243bf3c03ce6ce912f3f29034548}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+death} () const
+\item 
+\mbox{\Hypertarget{class_host_a050edec928d29fd287450fb20c95903a}\label{class_host_a050edec928d29fd287450fb20c95903a}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+fledge} () const
+\item 
+\mbox{\Hypertarget{class_host_ac35646a80288c11250f0e82789a84744}\label{class_host_ac35646a80288c11250f0e82789a84744}} 
+int {\bfseries get\+\_\+day\+\_\+of\+\_\+partnering} () const
+\item 
+\mbox{\Hypertarget{class_host_a3bc024680b5c0e69c4b2577f3dcac543}\label{class_host_a3bc024680b5c0e69c4b2577f3dcac543}} 
+std\+::vector$<$ int $>$ {\bfseries get\+\_\+days\+\_\+of\+\_\+childbirth} () const
+\item 
+\mbox{\Hypertarget{class_host_a28f0b58ee731c24b20c09b88d286a0e7}\label{class_host_a28f0b58ee731c24b20c09b88d286a0e7}} 
+int {\bfseries calculate\+\_\+age} (int current\+\_\+day) const
+\item 
+\mbox{\Hypertarget{class_host_a7b881817c8d2f8d278455a4ebe26d674}\label{class_host_a7b881817c8d2f8d278455a4ebe26d674}} 
+bool {\bfseries is\+\_\+eligible} (int current\+\_\+day) const
+\item 
+\mbox{\Hypertarget{class_host_a691d74bc50e3b7ea1dfba37413de7d29}\label{class_host_a691d74bc50e3b7ea1dfba37413de7d29}} 
+bool {\bfseries carries\+\_\+h\+\_\+influenzae} () const
+\item 
+\mbox{\Hypertarget{class_host_a593fe078d0255875a33056b6f9a2cbe3}\label{class_host_a593fe078d0255875a33056b6f9a2cbe3}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+susceptibility} () const
+\item 
+\mbox{\Hypertarget{class_host_ab2b55c0299e4c3e6b3bc71cf0fdc34d4}\label{class_host_ab2b55c0299e4c3e6b3bc71cf0fdc34d4}} 
+int {\bfseries get\+\_\+susceptibility} (int serotype) const
+\item 
+\mbox{\Hypertarget{class_host_ae23de85c01a34c5d93f4d79d7e82c0c5}\label{class_host_ae23de85c01a34c5d93f4d79d7e82c0c5}} 
+std\+::vector$<$ \hyperlink{class_colonization}{Colonization} $>$ {\bfseries contract\+\_\+colonization} (int current\+\_\+day, int serotype)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_host_a10ff430743fa050d2a0086c8bcd89704}\label{class_host_a10ff430743fa050d2a0086c8bcd89704}} 
+static void {\bfseries configure} (std\+::string config\+\_\+file)
+\item 
+\mbox{\Hypertarget{class_host_a09f87177afc14c88e5573a9c68e4f63c}\label{class_host_a09f87177afc14c88e5573a9c68e4f63c}} 
+static double {\bfseries get\+\_\+mu} ()
+\item 
+\mbox{\Hypertarget{class_host_ae82c8599759f4f889b6cfbf2657a1681}\label{class_host_ae82c8599759f4f889b6cfbf2657a1681}} 
+static double {\bfseries get\+\_\+epsilon} ()
+\item 
+\mbox{\Hypertarget{class_host_ab37282c2ba5ce3dc9eb369c3f6fb3da8}\label{class_host_ab37282c2ba5ce3dc9eb369c3f6fb3da8}} 
+static double {\bfseries get\+\_\+sigma} (int serotype)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_host_a3b5e58bfb12808bf0dc228d2b4e1705b}\label{class_host_a3b5e58bfb12808bf0dc228d2b4e1705b}} 
+static const int {\bfseries null\+\_\+id} = -\/1
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+host.\+h\item 
+scratch.\+h\item 
+host.\+cpp\end{DoxyCompactItemize}
