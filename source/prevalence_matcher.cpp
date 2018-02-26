@@ -77,8 +77,8 @@ void PrevalenceMatcher::configure(std::string config_file) {
   }
   target_prevalences_ = calculate_prevalences(observed_counts_);
 
-  switch (mode_) {
-    case PrevalenceMatcher::Mode::FitTransmission: {
+  //switch (mode_) {
+    //case PrevalenceMatcher::Mode::FitTransmission: {
       beta_            = ptree.get<double>("initial_values.beta");
       beta_weight_     = ptree.get<double>("initial_weights.beta");
 
@@ -89,26 +89,26 @@ void PrevalenceMatcher::configure(std::string config_file) {
       }
       double initial_rank_weight = ptree.get<double>("initial_weights.rank");
       rank_weights_ = std::vector<double>(Serotype::get_num_serotypes(), initial_rank_weight);
-      break;
-    } 
-    case PrevalenceMatcher::Mode::FitVaccine: {
+//      break;
+//    } 
+//    case PrevalenceMatcher::Mode::FitVaccine: {
       vaccine_to_fit_                      = ptree.get<std::string>("vaccine_to_fit");
       max_susceptibility_reduction_        = ptree.get<double>("initial_values.max_susceptibility_reduction");
       max_susceptibility_reduction_weight_ = ptree.get<double>("initial_weights.max_susceptibility_reduction");
-      break;
-    }
-  }
+//      break;
+//    }
+//  }
 }
 
 void PrevalenceMatcher::match() {
   auto start_time = std::time(nullptr);
 
   // set the relevant initial values
-  if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
+//  if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
     std::cout << "Starting fitting process for transmission parameters..." << std::endl;
-  } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
+//  } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
     std::cout << "Starting fitting process for " << vaccine_to_fit_ << " parameters..." << std::endl;
-  }
+//  }
 
   for (; iteration_ < max_iterations_; iteration_++) {
     // create a simulation 
@@ -116,12 +116,12 @@ void PrevalenceMatcher::match() {
     Simulation simulation { seed_, config_file_, output_folder_i };
     
     // update parameters
-    if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
+//    if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
       simulation.set_population_beta(beta_);
       Serotype::set_ranks(ranks_);
-    } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
+//    } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
       Vaccine::set_max_reduction(vaccine_to_fit_, Vaccine::EffectType::Susceptibility, max_susceptibility_reduction_);
-    }
+//    }
 
     // run simulation
     auto snapshots = simulation.run();
@@ -136,11 +136,11 @@ void PrevalenceMatcher::match() {
     save_snapshot();
 
     // adjust the relevant parameters
-    if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
-      update_transmission_parameters();
-    } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
-      update_vaccine_parameters();
-    }
+//    if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
+      if ((iteration_ % 2)==1) update_transmission_parameters();
+//    } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
+      else update_vaccine_parameters();
+//    }
     previous_prevalence_errors_ = prevalence_errors_;
     std::cout << "Iteration " << iteration_ + 1 << " of " << max_iterations_ << " completed." << std::endl;
   }
@@ -161,7 +161,8 @@ void PrevalenceMatcher::update_transmission_parameters() {
   }
   // 3. adjust the parameter
   adjust_beta(beta_, beta_weight_, error);
-
+  if (beta_<0) beta_ *= -1.0;
+  if (beta_weight_<0) beta_weight_ *= -1.0;
   // update ranks:
   if (!previous_prevalence_errors_.empty()) {
     adjust_weights(rank_weights_, target_prevalences_, prevalence_errors_, previous_prevalence_errors_);
@@ -267,9 +268,16 @@ void PrevalenceMatcher::adjust_max_susc_reduction(double &max_susceptibility_red
 void PrevalenceMatcher::adjust_ranks(std::vector<double> &ranks, 
                                      const std::vector<double>& weights,
                                      const std::vector<double>& errors) {
+  int arr[10] = {4, 10, 12, 18, 31, 32, 33, 38, 39, 40};
   for(int i = 0; i < ranks.size(); i++) {
-    ranks[i] *= (1.0 + weights[i] * errors[i]);
-    ranks[i] = clamp(ranks[i], Serotype::get_min_rank(), Serotype::get_max_rank());
+    bool next = false;
+    for (int j=0; j<10; j++) {
+      if (i==arr[j]) next = true;
+    }
+    if (!next) {
+      ranks[i] *= (1.0 + weights[i] * errors[i]);
+      ranks[i] = clamp(ranks[i], Serotype::get_min_rank(), Serotype::get_max_rank());
+    }
   }
 }
 
@@ -280,10 +288,10 @@ void PrevalenceMatcher::save_snapshot() {
   scribe_.note_values(prevalence_errors_,     "prevalence_errors.csv");
   scribe_.note_value (loglikelihood_,         "loglikelihood.csv");
 
-  if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
+  //if (mode_ == PrevalenceMatcher::Mode::FitTransmission) {
     scribe_.note_value (beta_,  "beta.csv");
     scribe_.note_values(ranks_, "ranks.csv");
-  } else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
+  //} else if (mode_ == PrevalenceMatcher::Mode::FitVaccine) {
     scribe_.note_value(max_susceptibility_reduction_, "max_susceptibility_reduction.csv");
-  }
+  //}
 }
