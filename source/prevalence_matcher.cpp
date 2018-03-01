@@ -72,11 +72,12 @@ void PrevalenceMatcher::configure(std::string config_file) {
   auto config_folder = fs::path(config_file).parent_path();
   auto counts_path = (config_folder / ptree.get<std::string>("observed_counts_file")).string();
   observed_counts_ = load_vector<unsigned int>(counts_path, "counts");
-  if (observed_counts_.size() != Serotype::get_num_serotypes() + 1) {
+  if ((observed_counts_.size()%(Serotype::get_num_serotypes() + 1)) != 0) {
     throw std::runtime_error {"Number of observed counts does not match number of serotypes plus one (for un-colonized)."};
   }
   target_prevalences_ = calculate_prevalences(observed_counts_);
-
+  data_years_ = as_vector<int>(ptree.get_child("data_years")); // compare prevalences at these number of years after simulation starts
+  
   //switch (mode_) {
     //case PrevalenceMatcher::Mode::FitTransmission: {
       beta_            = ptree.get<double>("initial_values.beta");
@@ -148,17 +149,31 @@ void PrevalenceMatcher::match() {
   std::cout << "Fitting complete. Took " << num_secs / 60 << " minutes and " << num_secs % 60 << " seconds." << std::endl;
 }
 
+double PrevalenceMatcher::sum_errors (std::vector <double> & errors, int num_serotypes) {
+  double total_error = 0.0;
+  int num_time_points = errors.size() / (num_serotypes+1);
+  for (int i=0; i<errors.size(); i++) {
+    if ((i%num_serotypes)!=0) {
+      total_error += errors[i];
+    }
+  }
+  return (total_error/(double) num_time_points);
+}
+
 void PrevalenceMatcher::update_transmission_parameters() {
   // update beta:
   // 1. calculate error (sum of prevalence errors)
-  double error = std::accumulate(prevalence_errors_.begin(), prevalence_errors_.end() - 1, 0.0);
-
+  int num_serotypes = ranks_.size();
+  int num_time_points = prevalence_errors_.size() / (num_serotypes+1);
+  double error = sum_errors(prevalence_errors_, num_serotypes);
+  
   // 2. adjust weight if we can compare this error to the error from the previous iteration
   if (!previous_prevalence_errors_.empty()) {
-    double target = std::accumulate(target_prevalences_.begin(), target_prevalences_.end() - 1, 0.0);        
-    double previous_error = std::accumulate(previous_prevalence_errors_.begin(), previous_prevalence_errors_.end() - 1, 0.0);
+    double target = sum_errors(target_prevalences_, num_serotypes);
+    double previous_error = sum_errors(previous_prevalence_errors_, num_serotypes);
     adjust_weight(beta_weight_, target, error, previous_error);
   }
+  
   // 3. adjust the parameter
   adjust_beta(beta_, beta_weight_, error);
   if (beta_<0) beta_ *= -1.0;
@@ -208,24 +223,37 @@ std::vector<double> PrevalenceMatcher::calculate_prevalences(std::vector<unsigne
   return prevalences;
 }
 
+std::vector<double> PrevalenceMatcher::calculate_prevalences(std::vector<unsigned int> counts, int num_serotypes) {
+  std::vector<double> prevalences;
+  int num_time_points = counts.size() / (num_serotypes + 1);
+  double total;
+  for (int t=0; t<num_time_points; t++) {
+    total = (double) std::accumulate(counts.begin()+t*(num_serotypes+1), counts.begin()+(t+1)*(num_serotypes+1), 0);
+    for (int i=0; i<num_serotypes+1; i++) {
+      prevalences.push_back((double)counts[t*(num_serotypes+1)+i] / total);
+    }
+  }
+  return prevalences;
+}
+
 std::vector<double> PrevalenceMatcher::calculate_prevalences(std::vector<Simulation::Snapshot> snapshots, unsigned int max_samples) {
   if (snapshots.empty()) {
     throw std::runtime_error { "PrevalenceMatcher::calculate_prevalence: snapshots vector is empty." };
   }
 
   int num_serotypes = snapshots[0].num_colonized_under_5.size();
-  auto prevalences = std::vector<double>(num_serotypes, 0);
   int n = (int) snapshots.size();
   int num_samples = std::min((int) max_samples, n);
-  for (int i = n - 1; i >= n - num_samples; i--) { // take most recent
+  auto prevalences = std::vector<double>(num_samples*(num_serotypes+1), 0);
+  //for (int i = n - 1; i >= n - num_samples; i--) { // if max_samples_==1, this loop takes the most recent
+  for (int i=0; i<num_samples; i++) {
     for (int s = 0; s < num_serotypes; s++) {
-      prevalences[s] += (1.0 / num_samples) * (snapshots[i].num_colonized_under_5[s] / (double) snapshots[i].num_hosts_under_5);
+      prevalences[i*(num_serotypes+1)+s] += (1.0 / num_samples) * (snapshots[data_years_[i]].num_colonized_under_5[s] / (double) snapshots[data_years_[i]].num_hosts_under_5);
     }
+    // add prevalence of un-colonized
+    double colonized_prevalence = std::accumulate(prevalences.begin()+i*(num_serotypes+1), prevalences.begin()+(i+1)*num_serotypes, 0.0);
+    prevalences[(i+1)*(num_serotypes+1)-1] = 1.0 - colonized_prevalence;
   }
-
-  // add prevalence of un-colonized
-  double colonized_prevalence = std::accumulate(prevalences.begin(), prevalences.end(), 0.0);
-  prevalences.push_back(1.0 - colonized_prevalence);
   return prevalences;
 }
 
@@ -251,8 +279,13 @@ void PrevalenceMatcher::adjust_weight(double &weight, const double target, const
 
 void PrevalenceMatcher::adjust_weights(std::vector<double>& weights, const std::vector<double>& targets, 
                                        const std::vector<double>& errors, const std::vector<double>& previous_errors) {
-  for(int i = 0; i < weights.size(); i++) {
-    adjust_weight(weights[i], targets[i], errors[i], previous_errors[i]);
+  int num_serotypes = weights.size();
+  int num_time_points = targets.size() / (num_serotypes+1);
+  for (int t=0; t<num_time_points; t++) {
+    for(int i = 0; i < weights.size(); i++) {
+      int j = t*(num_serotypes+1)+i;
+      adjust_weight(weights[i], targets[j], errors[j], previous_errors[j]);
+    }
   }
 }
 
@@ -268,14 +301,23 @@ void PrevalenceMatcher::adjust_max_susc_reduction(double &max_susceptibility_red
 void PrevalenceMatcher::adjust_ranks(std::vector<double> &ranks, 
                                      const std::vector<double>& weights,
                                      const std::vector<double>& errors) {
-  int arr[10] = {4, 10, 12, 18, 31, 32, 33, 38, 39, 40};
+  //int arr[10] = {4, 10, 12, 18, 31, 32, 33, 38, 39, 40};
+  int num_serotypes = ranks.size();
+  int num_time_points = errors.size() / (num_serotypes + 1);
   for(int i = 0; i < ranks.size(); i++) {
     bool next = false;
-    for (int j=0; j<10; j++) {
-      if (i==arr[j]) next = true;
-    }
+    //    for (int j=0; j<10; j++) {
+    //      if (i==arr[j]) next = true;
+    //    }
     if (!next) {
-      ranks[i] *= (1.0 + weights[i] * errors[i]);
+      double error = errors[i];
+      if (num_time_points > 1) {
+        for (int t=1; t<num_time_points; t++) {
+          error += errors[t*(num_serotypes+1)+i];
+        }
+      }
+      error /= (double) num_time_points;
+      ranks[i] *= (1.0 + weights[i] * error);
       ranks[i] = clamp(ranks[i], Serotype::get_min_rank(), Serotype::get_max_rank());
     }
   }

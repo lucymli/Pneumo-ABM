@@ -18,9 +18,11 @@ private:
   void configure(std::string config_file);
 
   std::vector<double> calculate_prevalences(std::vector<unsigned int> counts);
+  std::vector<double> calculate_prevalences(std::vector<unsigned int> counts, int num_serotypes);
   std::vector<double> calculate_prevalences(std::vector<Simulation::Snapshot> snapshots, unsigned int max_samples);
   std::vector<double> calculate_errors(std::vector<double> estimated, std::vector<double> target);
-
+  double sum_errors (std::vector <double> &, int);
+  
   void update_transmission_parameters();
   void update_vaccine_parameters();
 
@@ -47,6 +49,7 @@ private:
   std::vector<unsigned int> observed_counts_;
   std::vector<double> target_prevalences_;
   std::time_t start_time_;
+  std::vector<int> data_years_;
 
   // updated every iteration
   unsigned int iteration_;
